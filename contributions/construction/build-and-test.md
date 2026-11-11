@@ -1,0 +1,29 @@
+---
+target: build-and-test
+plugin: rpa-uipath
+adds:
+  scopes:
+    - rpa-uipath-enhance
+  sensors:
+    - uipath-workflow-analyzer
+fragments:
+  - anchor: after-step:8
+    order: 100
+---
+
+## fragment: after-step:8
+
+### Step 8b (rpa-uipath): UiPath test cases
+
+When the work is a UiPath automation, the test instructions cover, for each
+changed workflow:
+
+- the happy path with one valid transaction;
+- every row of the SDD `## Exception Matrix` (one Business Rule Exception and
+  one System Exception at least), with the expected queue item status;
+- each `Config.xlsx` key the change added, missing and present.
+
+Name the test data files and where they live. Record in
+`build-and-test-summary.md` the result of the Workflow Analyzer check
+(`uip rpa analyze`); the `uipath-workflow-analyzer` sensor re-runs it at the
+gate and reports any `Error` or `Critical` finding.

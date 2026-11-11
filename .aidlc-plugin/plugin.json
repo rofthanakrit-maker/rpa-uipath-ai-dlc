@@ -1,0 +1,16 @@
+{
+  "name": "rpa-uipath",
+  "version": "0.1.0",
+  "description": "UiPath RPA plugin: a discovery scope with a process assessment (fit score, ROI, go / no-go), an enhance scope for existing bots, PDD-shaped requirements, SDD-shaped functional design, and a Workflow Analyzer gate check.",
+  "author": { "name": "rpa-uipath" },
+  "dependencies": ["core"],
+  "aidlc": {
+    "contributes": {
+      "stages": "stages/",
+      "overlays": "contributions/",
+      "scopes": "scopes/",
+      "sensors": "sensors/",
+      "tools": "tools/"
+    }
+  }
+}
