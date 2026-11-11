@@ -113,6 +113,7 @@ stages/ideation/               rpa-uipath-process-assessment
 contributions/                 additions to core stages (scope membership, PDD / SDD prose, sensor binding)
 sensors/                       uipath-workflow-analyzer manifest
 tools/                         sensor script
+tests/                         sensor script tests (`bun test`)
 ```
 
 Validate after editing (from a configured project folder):

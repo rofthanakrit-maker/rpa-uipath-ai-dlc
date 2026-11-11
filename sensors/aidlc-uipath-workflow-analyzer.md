@@ -24,16 +24,23 @@ contribution. The gate fires a sensor once per deliverable; this one acts only
 on `build-and-test-summary.md` and passes every other file through, so the
 analyzer runs once per gate.
 
-It looks for `project.json` in the project directory, then in each direct
-sub-directory, and runs `uip rpa analyze <dir> --output json` on each UiPath
-project it finds.
+It looks for a UiPath `project.json` in the project directory and up to three
+levels below it, and runs `uip rpa analyze <dir> --output json` on each UiPath
+project it finds. A `project.json` that belongs to another tool is ignored, and
+the search does not go inside a UiPath project (or a hidden or `node_modules`
+directory).
 
-- `pass: false` when any project has `Error` or `Critical` findings. Warnings
-  are counted and listed, but do not fail.
-- A `Legacy` project is skipped with a note: the analyzer does not support it.
-- No `project.json` found: pass with a note.
-- `uip` missing or the analyzer crashing: the script exits non-zero, which the
-  dispatcher records as `SENSOR_COULD_NOT_RUN` (not a pass).
+- `pass: false` when any project has `Error` or `Critical` findings; those are
+  listed. Warnings are counted, not listed, and do not fail.
+- A `Legacy` project (or one with no `targetFramework`) is skipped: the
+  analyzer does not support it. The result carries a `note` that says how many
+  projects were skipped, so a pass with nothing analyzed is visible.
+- No UiPath `project.json` found: pass with a note.
+- `uip` missing, the analyzer crashing, or the time budget running out: the
+  script exits non-zero, which the dispatcher records as
+  `SENSOR_COULD_NOT_RUN` (not a pass).
+- All projects share one time budget of 840 seconds, set by `BUDGET_MS` in the
+  script. Keep it below `timeout_seconds` above.
 
 Kept advisory so a slow or broken analyzer never blocks the gate; switch
 `default_severity` to `blocking` once the team trusts it.
