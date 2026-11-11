@@ -1,9 +1,21 @@
 // Run: bun test
-import { expect, test } from "bun:test";
-import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
+import { afterEach, expect, test } from "bun:test";
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { findProjects, isLegacy, parseAnalyze, run } from "../tools/aidlc-sensor-uipath-workflow-analyzer.ts";
+
+const tmpDirs: string[] = [];
+
+function tmp(): string {
+  const dir = mkdtempSync(join(tmpdir(), "uipath-sensor-"));
+  tmpDirs.push(dir);
+  return dir;
+}
+
+afterEach(() => {
+  for (const dir of tmpDirs.splice(0)) rmSync(dir, { recursive: true, force: true });
+});
 
 function project(dir: string, json: object | string): string {
   mkdirSync(dir, { recursive: true });
@@ -14,7 +26,7 @@ function project(dir: string, json: object | string): string {
 const UIPATH = { name: "Bot", studioVersion: "24.10.0", targetFramework: "Windows" };
 
 test("findProjects: nested projects, BOM, skips non-UiPath and hidden dirs", () => {
-  const root = mkdtempSync(join(tmpdir(), "uipath-sensor-"));
+  const root = tmp();
   const a = project(join(root, "bots", "A"), UIPATH);
   const b = project(join(root, "B"), `﻿${JSON.stringify(UIPATH)}`);
   project(join(root, "dotnet"), { version: "1.0.0", frameworks: {} });
@@ -24,7 +36,7 @@ test("findProjects: nested projects, BOM, skips non-UiPath and hidden dirs", () 
 });
 
 test("findProjects: a non-UiPath project.json at the root does not hide sub-projects", () => {
-  const root = project(mkdtempSync(join(tmpdir(), "uipath-sensor-")), { version: "1.0.0" });
+  const root = project(tmp(), { version: "1.0.0" });
   const a = project(join(root, "A"), UIPATH);
   expect(findProjects(root)).toEqual([a]);
 });
@@ -65,7 +77,7 @@ test("run: passes other deliverables through, flags Legacy-only as not analyzed"
   expect(run(["--output-path", "x/other.md"])).toEqual({ pass: true, findings_count: 0, projects: [] });
   expect(() => run([])).toThrow("--output-path is required");
 
-  const root = mkdtempSync(join(tmpdir(), "uipath-sensor-"));
+  const root = tmp();
   project(join(root, "Old"), { studioVersion: "20.10.0", targetFramework: "Legacy" });
   const r = run(["--output-path", "a/build-and-test-summary.md"], { AIDLC_PROJECT_DIR: root });
   expect(r.pass).toBe(true);
