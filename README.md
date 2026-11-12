@@ -128,7 +128,8 @@ bun .claude/tools/aidlc-plugin-validate.ts C:\src\rpa-uipath
   `default_severity` to `blocking` in `sensors/aidlc-uipath-workflow-analyzer.md` to enforce it.
 - PDD / SDD section headings are not machine-checked; AI-DLC does not enforce
   `required_sections` yet.
-- The assessment stage shows as number 1.45 (AI-DLC numbers plugin stages after its phase);
-  it runs after Scope Definition and before the PDD.
+- The assessment stage shows as number 1.8: AI-DLC numbers plugin stages after the last stage
+  of their phase, and the authored `number: 1.45` only breaks ties. It runs after Scope
+  Definition and before the PDD.
 - ROI defaults (1,800 productive hours per FTE per year, Go / No-go thresholds) live in
   Steps 5-6 of `stages/ideation/rpa-uipath-process-assessment.md`.
