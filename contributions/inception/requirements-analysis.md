@@ -28,6 +28,9 @@ under these `##` headings, in this order:
    application used at each step.
 3. `## To-Be Process` - numbered steps after the change; mark each step
    **Robot** or **Human**. Each robot step cites the FR IDs it satisfies.
+   Write a robot step that uses an application's UI as one action on one
+   screen (Click / Enter / Select / Verify, and the field or button), so each
+   step maps to one UI target.
 4. `## Applications and Access` - every application, its version, how the
    robot reaches it (UI / API / file), and the credential source (Orchestrator
    Asset name, never the value).

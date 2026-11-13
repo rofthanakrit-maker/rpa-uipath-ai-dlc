@@ -29,6 +29,9 @@ When the work is a UiPath automation:
   Assets; never hard-code either.
 - Throw `BusinessRuleException` for business exceptions and let system
   exceptions reach the REFramework retry.
-- When the `uip` CLI is on PATH, run `uip rpa analyze <project-dir> --output json`
-  after the edits and fix every `Error` / `Critical` finding before the
-  completion handoff.
+- When the `uip` CLI is on PATH, before the completion handoff: every changed
+  file passes `uip rpa validate --file-path <file> --project-dir <project-dir> --output json`,
+  then the project passes `uip rpa build <project-dir> --output json`. Both
+  enforce the project's Workflow Analyzer rules; `build` also catches compile
+  errors that `validate` misses. These commands do not apply to a `Legacy`
+  project; follow the `uipath-rpa` skill's Legacy mode there.

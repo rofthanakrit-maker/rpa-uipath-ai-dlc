@@ -13,7 +13,10 @@ fragments:
 
 ### Step 2b (rpa-uipath): Scan a UiPath project
 
-When the repository holds a UiPath `project.json`, the code scan also records:
+When the repository holds a UiPath `project.json`, read
+`.claude/rules/project-context.md` first if it exists (the `uipath-rpa` skill
+writes it) and scan only for what it does not already answer. The code scan
+also records:
 
 - `targetFramework` (Windows, Portable, or Legacy) and the Studio version.
 - The entry points and every invoked workflow (`.xaml` / `.cs`), as a call tree
