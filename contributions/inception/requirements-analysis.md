@@ -3,6 +3,7 @@ target: requirements-analysis
 plugin: rpa-uipath
 adds:
   scopes:
+    - rpa-uipath-build
     - rpa-uipath-enhance
     - rpa-uipath-discovery
   consumes:

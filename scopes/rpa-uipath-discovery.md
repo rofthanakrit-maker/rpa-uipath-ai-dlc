@@ -33,7 +33,7 @@ worth automating, then write the PDD the business signs off. Nothing is built.
 - **Requirements Analysis** - the PDD.
 
 Everything after the PDD is skipped. After sign-off, carry on in the same work
-with `/aidlc --scope mvp` (new bot) or `/aidlc --scope rpa-uipath-enhance`
+with `/aidlc --scope rpa-uipath-build` (new bot) or `/aidlc --scope rpa-uipath-enhance`
 (changing an existing bot).
 
 ## Membership

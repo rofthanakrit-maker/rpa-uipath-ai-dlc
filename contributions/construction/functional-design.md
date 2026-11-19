@@ -3,6 +3,7 @@ target: functional-design
 plugin: rpa-uipath
 adds:
   scopes:
+    - rpa-uipath-build
     - rpa-uipath-enhance
 fragments:
   - anchor: after-step:4

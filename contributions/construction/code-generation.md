@@ -3,6 +3,7 @@ target: code-generation
 plugin: rpa-uipath
 adds:
   scopes:
+    - rpa-uipath-build
     - rpa-uipath-enhance
 fragments:
   - anchor: before-step:4
@@ -22,15 +23,16 @@ When the work is a UiPath automation:
   both skills are available, `uipath-core` creates new files and `uipath-rpa`
   governs edits to existing workflows. When only one is available, follow it
   for both.
-- Change only the workflows named in the SDD `## Workflow Map`.
+- Create or change only the workflows named in the SDD `## Workflow Map`
+  (plus the REFramework scaffold files for a new project).
 - Give every activity a descriptive display name (Workflow Analyzer flags
   defaults such as "Assign" or "Try Catch").
 - Read settings from the Config dictionary and credentials from Orchestrator
   Assets; never hard-code either.
 - Throw `BusinessRuleException` for business exceptions and let system
   exceptions reach the REFramework retry.
-- When the `uip` CLI is on PATH, before the completion handoff: every changed
-  file passes `uip rpa validate --file-path <file> --project-dir <project-dir> --output json`,
+- When the `uip` CLI is on PATH, before the completion handoff: every new or
+  changed file passes `uip rpa validate --file-path <file> --project-dir <project-dir> --output json`,
   then the project passes `uip rpa build <project-dir> --output json`. Both
   enforce the project's Workflow Analyzer rules; `build` also catches compile
   errors that `validate` misses. These commands do not apply to a `Legacy`
