@@ -6,7 +6,7 @@ keywords:
   - new bot
   - greenfield
   - build bot
-  - scaffold
+  - reframework scaffold
   - uipath new project
 description: Build a new UiPath bot from scratch (PDD, SDD, REFramework/XAML, Workflow Analyzer)
 skeleton: off
@@ -41,7 +41,7 @@ Analyzer check.
 
 Ideation is skipped: run `rpa-uipath-discovery` first when the business case
 and ROI are not settled yet. Reverse Engineering is skipped: there is no
-existing bot codebase (`existing_code: false`). Operation is skipped: the
+existing bot codebase to read. Operation is skipped: the
 core stages there target AWS, not Orchestrator.
 
 ## Membership
