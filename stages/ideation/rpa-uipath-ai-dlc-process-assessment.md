@@ -1,19 +1,19 @@
 ---
-slug: rpa-uipath-process-assessment
+slug: rpa-uipath-ai-dlc-process-assessment
 number: 1.45
 name: RPA Process Assessment
 plugin: rpa-uipath-ai-dlc
 phase: ideation
 execution: ALWAYS
-condition: Always executes under the rpa-uipath-discovery scope - scores the candidate process and states go / no-go before the PDD is written.
+condition: Always executes under the rpa-uipath-ai-dlc-discovery scope - scores the candidate process and states go / no-go before the PDD is written.
 lead_agent: aidlc-product-agent
 support_agents:
   - aidlc-architect-agent
 mode: inline
 summary_confirmation: required
 produces:
-  - rpa-uipath-assessment
-  - rpa-uipath-assessment-questions
+  - rpa-uipath-ai-dlc-assessment
+  - rpa-uipath-ai-dlc-assessment-questions
 consumes:
   - artifact: intent-statement
     required: true
@@ -32,12 +32,12 @@ sensors:
   - required-sections
   - upstream-coverage
 scopes:
-  - rpa-uipath-discovery
+  - rpa-uipath-ai-dlc-discovery
 ars:
   targets: [iae, r]
   cost: 2
 inputs: Intent statement, feasibility assessment, constraint register, scope document
-outputs: rpa-uipath-assessment.md, rpa-uipath-assessment-questions.md (under this stage's record dir, engine-resolved)
+outputs: rpa-uipath-ai-dlc-assessment.md, rpa-uipath-ai-dlc-assessment-questions.md (under this stage's record dir, engine-resolved)
 ---
 
 # RPA Process Assessment
@@ -60,7 +60,7 @@ an ROI estimate and a go / no-go recommendation the person approves.
 
 ### Step 2: Generate Clarifying Questions
 
-Create `<record>/ideation/rpa-uipath-process-assessment/rpa-uipath-assessment-questions.md`
+Create `<record>/ideation/rpa-uipath-ai-dlc-process-assessment/rpa-uipath-ai-dlc-assessment-questions.md`
 asking only for what the earlier artifacts do not already answer:
 
 - Volume: transactions per day / month, and peak periods.
@@ -123,7 +123,7 @@ ROI as a range or say it cannot be computed; never fill the gap with a guess.
 
 ### Step 6: Recommend
 
-Write `rpa-uipath-assessment.md` with these `##` sections:
+Write `rpa-uipath-ai-dlc-assessment.md` with these `##` sections:
 
 1. `## Process Summary` - process, owner, trigger, volume.
 2. `## Automation Fit` - the scored table from Step 4 and the fit score.
@@ -140,13 +140,13 @@ Write `rpa-uipath-assessment.md` with these `##` sections:
 ### Step 7: Completion Handoff
 
 Hand completion to `stage-protocol.md` via
-`{{INVOKE}} engine orchestrate report --stage rpa-uipath-process-assessment --result <outcome>`.
+`{{INVOKE}} engine orchestrate report --stage rpa-uipath-ai-dlc-process-assessment --result <outcome>`.
 That `report` call owns every lifecycle transition and advancement; never perform one in prose, and never narrate this bookkeeping to the user.
 
 ### Step 8: Present Completion & Request Approval
 
 Completion emoji: :robot:
-Review path: `<record>/ideation/rpa-uipath-process-assessment/`
+Review path: `<record>/ideation/rpa-uipath-ai-dlc-process-assessment/`
 Standard approval gate (Approve / Request Changes). On a No-go the person may
 approve the assessment and then park or archive the work instead of going on
 to the PDD.

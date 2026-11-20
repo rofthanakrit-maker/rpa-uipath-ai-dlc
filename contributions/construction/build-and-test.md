@@ -3,8 +3,8 @@ target: build-and-test
 plugin: rpa-uipath-ai-dlc
 adds:
   scopes:
-    - rpa-uipath-build
-    - rpa-uipath-enhance
+    - rpa-uipath-ai-dlc-build
+    - rpa-uipath-ai-dlc-enhance
   sensors:
     - uipath-workflow-analyzer
 fragments:

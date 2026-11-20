@@ -1,5 +1,5 @@
 ---
-name: rpa-uipath-enhance
+name: rpa-uipath-ai-dlc-enhance
 plugin: rpa-uipath-ai-dlc
 depth: Standard
 keywords:
@@ -20,7 +20,7 @@ plan_approval: on
 collaborators: off
 ---
 
-# rpa-uipath-enhance scope
+# rpa-uipath-ai-dlc-enhance scope
 
 Standard depth for changing a UiPath bot that already exists: a new
 business rule, a new application step, a fix to exception handling.

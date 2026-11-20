@@ -1,5 +1,5 @@
 ---
-name: rpa-uipath-build
+name: rpa-uipath-ai-dlc-build
 plugin: rpa-uipath-ai-dlc
 depth: Standard
 keywords:
@@ -20,7 +20,7 @@ plan_approval: on
 collaborators: off
 ---
 
-# rpa-uipath-build scope
+# rpa-uipath-ai-dlc-build scope
 
 Standard depth for building a new UiPath bot from scratch (greenfield): from
 PDD through SDD, project scaffold and workflows, to test cases and Workflow
@@ -29,7 +29,7 @@ Analyzer check.
 ## Why these stages, why skip those
 
 - **Requirements Analysis** writes the PDD (As-Is / To-Be, process steps,
-  business rules, exceptions). When continuing from `rpa-uipath-discovery`,
+  business rules, exceptions). When continuing from `rpa-uipath-ai-dlc-discovery`,
   the existing PDD and assessment are reused.
 - **Functional Design** writes the SDD (solution architecture, target
   framework and expression language, workflow map, REFramework states,
@@ -39,7 +39,7 @@ Analyzer check.
 - **Build and Test** writes the test cases and runs the Workflow Analyzer
   check.
 
-Ideation is skipped: run `rpa-uipath-discovery` first when the business case
+Ideation is skipped: run `rpa-uipath-ai-dlc-discovery` first when the business case
 and ROI are not settled yet. Reverse Engineering is skipped: there is no
 existing bot codebase to read. Operation is skipped: the
 core stages there target AWS, not Orchestrator.

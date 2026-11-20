@@ -1,5 +1,5 @@
 ---
-name: rpa-uipath-discovery
+name: rpa-uipath-ai-dlc-discovery
 plugin: rpa-uipath-ai-dlc
 depth: Standard
 keywords:
@@ -19,7 +19,7 @@ plan_approval: on
 collaborators: off
 ---
 
-# rpa-uipath-discovery scope
+# rpa-uipath-ai-dlc-discovery scope
 
 Standard depth for the start of an RPA engagement: decide whether a process is
 worth automating, then write the PDD the business signs off. Nothing is built.
@@ -33,7 +33,7 @@ worth automating, then write the PDD the business signs off. Nothing is built.
 - **Requirements Analysis** - the PDD.
 
 Everything after the PDD is skipped. After sign-off, carry on in the same work
-with `/aidlc --scope rpa-uipath-build` (new bot) or `/aidlc --scope rpa-uipath-enhance`
+with `/aidlc --scope rpa-uipath-ai-dlc-build` (new bot) or `/aidlc --scope rpa-uipath-ai-dlc-enhance`
 (changing an existing bot).
 
 ## Membership

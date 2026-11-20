@@ -3,5 +3,5 @@ target: intent-capture
 plugin: rpa-uipath-ai-dlc
 adds:
   scopes:
-    - rpa-uipath-discovery
+    - rpa-uipath-ai-dlc-discovery
 ---

@@ -3,7 +3,7 @@ target: reverse-engineering
 plugin: rpa-uipath-ai-dlc
 adds:
   scopes:
-    - rpa-uipath-enhance
+    - rpa-uipath-ai-dlc-enhance
 fragments:
   - anchor: after-step:2
     order: 100

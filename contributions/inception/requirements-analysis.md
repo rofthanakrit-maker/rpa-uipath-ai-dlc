@@ -3,11 +3,11 @@ target: requirements-analysis
 plugin: rpa-uipath-ai-dlc
 adds:
   scopes:
-    - rpa-uipath-build
-    - rpa-uipath-enhance
-    - rpa-uipath-discovery
+    - rpa-uipath-ai-dlc-build
+    - rpa-uipath-ai-dlc-enhance
+    - rpa-uipath-ai-dlc-discovery
   consumes:
-    - artifact: rpa-uipath-assessment
+    - artifact: rpa-uipath-ai-dlc-assessment
       required: false
       cited: true
 fragments:
@@ -44,7 +44,7 @@ under these `##` headings, in this order:
    count, and when a person is told.
 9. `## Out of Scope`.
 
-When `rpa-uipath-assessment.md` exists, take `## Process Overview` volume and
+When `rpa-uipath-ai-dlc-assessment.md` exists, take `## Process Overview` volume and
 benefit from it and cite it; keep its conditions (Go with conditions) as NFRs.
 
 Put the FR / NFR lists inside these sections rather than in a separate

@@ -4,10 +4,10 @@ An [AI-DLC](https://github.com/awslabs/aidlc-workflows) plugin for UiPath RPA wo
 
 | Adds | What it does |
 |---|---|
-| Scope `rpa-uipath-discovery` | Start of an engagement: Intent → Feasibility → Scope → **Process Assessment** → PDD. Builds nothing. |
-| Scope `rpa-uipath-build` | Build a new bot from scratch (greenfield): PDD → SDD → Code Generation → Build and Test. |
-| Scope `rpa-uipath-enhance` | Change an existing bot: Reverse Engineering → PDD → SDD → Code Generation → Build and Test. |
-| Stage `rpa-uipath-process-assessment` | Fit score (6 criteria), ROI / FTE / payback, Go / Go with conditions / No-go. |
+| Scope `rpa-uipath-ai-dlc-discovery` | Start of an engagement: Intent → Feasibility → Scope → **Process Assessment** → PDD. Builds nothing. |
+| Scope `rpa-uipath-ai-dlc-build` | Build a new bot from scratch (greenfield): PDD → SDD → Code Generation → Build and Test. |
+| Scope `rpa-uipath-ai-dlc-enhance` | Change an existing bot: Reverse Engineering → PDD → SDD → Code Generation → Build and Test. |
+| Stage `rpa-uipath-ai-dlc-process-assessment` | Fit score (6 criteria), ROI / FTE / payback, Go / Go with conditions / No-go. |
 | PDD / SDD shaping | `requirements.md` follows a PDD outline; `functional-spec.md` follows an SDD outline. Applies under any scope when the work is a UiPath automation. |
 | Sensor `uipath-workflow-analyzer` | Runs `uip rpa analyze` at the Build and Test gate and reports `Error` / `Critical` findings (advisory). |
 
@@ -67,30 +67,30 @@ In Claude Code:
 /aidlc --doctor
 ```
 
-The scopes are composed when `.claude/scopes/` contains `rpa-uipath-discovery.md`,
-`rpa-uipath-build.md`, and `rpa-uipath-enhance.md`.
+The scopes are composed when `.claude/scopes/` contains `rpa-uipath-ai-dlc-discovery.md`,
+`rpa-uipath-ai-dlc-build.md`, and `rpa-uipath-ai-dlc-enhance.md`.
 
 ## Use
 
 Assess a new process and write its PDD:
 
 ```text
-/aidlc --scope rpa-uipath-discovery Assess the AP invoice-to-PO matching process
+/aidlc --scope rpa-uipath-ai-dlc-discovery Assess the AP invoice-to-PO matching process
 ```
 
 On a No-go, close the work with `/aidlc intent archive <name>`. On a Go, carry on in the same
-work with `/aidlc --scope rpa-uipath-build` (new bot) or `/aidlc --scope rpa-uipath-enhance` (existing bot).
+work with `/aidlc --scope rpa-uipath-ai-dlc-build` (new bot) or `/aidlc --scope rpa-uipath-ai-dlc-enhance` (existing bot).
 
 Build a new bot from scratch (greenfield):
 
 ```text
-/aidlc --scope rpa-uipath-build Build a bot that reconciles daily bank statements in SAP
+/aidlc --scope rpa-uipath-ai-dlc-build Build a bot that reconciles daily bank statements in SAP
 ```
 
 Change an existing bot:
 
 ```text
-/aidlc --scope rpa-uipath-enhance Add a retry when SAP login times out
+/aidlc --scope rpa-uipath-ai-dlc-enhance Add a retry when SAP login times out
 ```
 
 ## Update
@@ -109,8 +109,8 @@ Then start a new Claude Code session (option A), or run the `plugin sync` comman
 
 ```text
 .aidlc-plugin/plugin.json      manifest
-scopes/                        rpa-uipath-discovery, rpa-uipath-build, rpa-uipath-enhance
-stages/ideation/               rpa-uipath-process-assessment
+scopes/                        rpa-uipath-ai-dlc-discovery, rpa-uipath-ai-dlc-build, rpa-uipath-ai-dlc-enhance
+stages/ideation/               rpa-uipath-ai-dlc-process-assessment
 contributions/                 additions to core stages (scope membership, PDD / SDD prose, sensor binding)
 sensors/                       uipath-workflow-analyzer manifest
 tools/                         sensor script
@@ -133,4 +133,4 @@ bun .claude/tools/aidlc-plugin-validate.ts C:\src\rpa-uipath-ai-dlc
   of their phase, and the authored `number: 1.45` only breaks ties. It runs after Scope
   Definition and before the PDD.
 - ROI defaults (1,800 productive hours per FTE per year, Go / No-go thresholds) live in
-  Steps 5-6 of `stages/ideation/rpa-uipath-process-assessment.md`.
+  Steps 5-6 of `stages/ideation/rpa-uipath-ai-dlc-process-assessment.md`.

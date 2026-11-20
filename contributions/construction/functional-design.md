@@ -3,8 +3,8 @@ target: functional-design
 plugin: rpa-uipath-ai-dlc
 adds:
   scopes:
-    - rpa-uipath-build
-    - rpa-uipath-enhance
+    - rpa-uipath-ai-dlc-build
+    - rpa-uipath-ai-dlc-enhance
 fragments:
   - anchor: after-step:4
     order: 100
