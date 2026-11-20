@@ -1,6 +1,6 @@
 ---
 name: rpa-uipath-build
-plugin: rpa-uipath
+plugin: rpa-uipath-ai-dlc
 depth: Standard
 keywords:
   - new bot

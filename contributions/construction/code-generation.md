@@ -1,6 +1,6 @@
 ---
 target: code-generation
-plugin: rpa-uipath
+plugin: rpa-uipath-ai-dlc
 adds:
   scopes:
     - rpa-uipath-build
@@ -12,7 +12,7 @@ fragments:
 
 ## fragment: before-step:4
 
-### Step 3b (rpa-uipath): Generating UiPath workflows
+### Step 3b (rpa-uipath-ai-dlc): Generating UiPath workflows
 
 When the work is a UiPath automation:
 

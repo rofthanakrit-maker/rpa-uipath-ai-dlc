@@ -1,6 +1,6 @@
 ---
 target: reverse-engineering
-plugin: rpa-uipath
+plugin: rpa-uipath-ai-dlc
 adds:
   scopes:
     - rpa-uipath-enhance
@@ -11,7 +11,7 @@ fragments:
 
 ## fragment: after-step:2
 
-### Step 2b (rpa-uipath): Scan a UiPath project
+### Step 2b (rpa-uipath-ai-dlc): Scan a UiPath project
 
 When the repository holds a UiPath `project.json`, read
 `.claude/rules/project-context.md` first if it exists (the `uipath-rpa` skill

@@ -1,6 +1,6 @@
 ---
 target: scope-definition
-plugin: rpa-uipath
+plugin: rpa-uipath-ai-dlc
 adds:
   scopes:
     - rpa-uipath-discovery

@@ -2,7 +2,7 @@
 slug: rpa-uipath-process-assessment
 number: 1.45
 name: RPA Process Assessment
-plugin: rpa-uipath
+plugin: rpa-uipath-ai-dlc
 phase: ideation
 execution: ALWAYS
 condition: Always executes under the rpa-uipath-discovery scope - scores the candidate process and states go / no-go before the PDD is written.

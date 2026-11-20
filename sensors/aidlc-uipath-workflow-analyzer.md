@@ -4,7 +4,7 @@ kind: deterministic
 command: bun {{HARNESS_DIR}}/tools/aidlc-sensor-uipath-workflow-analyzer.ts
 default_severity: advisory
 fire_on: gate
-description: Runs UiPath Workflow Analyzer (uip rpa analyze) on the project and reports Error/Critical findings (rpa-uipath plugin, advisory)
+description: Runs UiPath Workflow Analyzer (uip rpa analyze) on the project and reports Error/Critical findings (rpa-uipath-ai-dlc plugin, advisory)
 category: code-quality
 matches: "**/{aidlc-docs,intents}/**"
 input_schema:
@@ -17,7 +17,7 @@ output_schema:
 timeout_seconds: 900
 ---
 
-# uipath-workflow-analyzer sensor (rpa-uipath)
+# uipath-workflow-analyzer sensor (rpa-uipath-ai-dlc)
 
 ADVISORY, gate-fired. Bound to `build-and-test` through the plugin's
 contribution. The gate fires a sensor once per deliverable; this one acts only

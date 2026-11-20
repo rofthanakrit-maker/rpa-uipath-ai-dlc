@@ -1,6 +1,6 @@
 ---
 target: requirements-analysis
-plugin: rpa-uipath
+plugin: rpa-uipath-ai-dlc
 adds:
   scopes:
     - rpa-uipath-build
@@ -17,7 +17,7 @@ fragments:
 
 ## fragment: after-step:10
 
-### Step 10b (rpa-uipath): Shape requirements.md as a PDD
+### Step 10b (rpa-uipath-ai-dlc): Shape requirements.md as a PDD
 
 When the work is a UiPath automation, `requirements.md` doubles as the Process
 Definition Document. Keep the core FR / NFR IDs, and organise the document

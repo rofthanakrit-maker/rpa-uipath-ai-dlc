@@ -1,6 +1,6 @@
 ---
 target: functional-design
-plugin: rpa-uipath
+plugin: rpa-uipath-ai-dlc
 adds:
   scopes:
     - rpa-uipath-build
@@ -12,7 +12,7 @@ fragments:
 
 ## fragment: after-step:4
 
-### Step 4b (rpa-uipath): Shape functional-spec.md as an SDD
+### Step 4b (rpa-uipath-ai-dlc): Shape functional-spec.md as an SDD
 
 When the work is a UiPath automation, `functional-spec.md` doubles as the
 Solution Design Document for this Unit. Add these `##` sections:

@@ -1,6 +1,6 @@
 ---
 target: feasibility
-plugin: rpa-uipath
+plugin: rpa-uipath-ai-dlc
 adds:
   scopes:
     - rpa-uipath-discovery

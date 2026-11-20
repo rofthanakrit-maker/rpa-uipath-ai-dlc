@@ -1,4 +1,4 @@
-# rpa-uipath
+# rpa-uipath-ai-dlc
 
 An [AI-DLC](https://github.com/awslabs/aidlc-workflows) plugin for UiPath RPA work.
 
@@ -32,20 +32,20 @@ aidlc config --harness claude
 ### 2. Get and build the plugin
 
 ```bash
-git clone https://github.com/rofthanakrit-maker/rpa-uipath C:\src\rpa-uipath
-bun .claude/tools/aidlc-plugin-build.ts C:\src\rpa-uipath claude
+git clone https://github.com/rofthanakrit-maker/rpa-uipath-ai-dlc C:\src\rpa-uipath-ai-dlc
+bun .claude/tools/aidlc-plugin-build.ts C:\src\rpa-uipath-ai-dlc claude
 ```
 
 Run the build from the project folder of step 1; it uses that project's AI-DLC tools.
-The output is `C:\src\rpa-uipath\dist\claude\`.
+The output is `C:\src\rpa-uipath-ai-dlc\dist\claude\`.
 
 ### 3. Install into Claude Code
 
 Option A - through the Claude Code plugin store (in Claude Code):
 
 ```text
-/plugin marketplace add C:\src\rpa-uipath\dist\claude
-/plugin install rpa-uipath@rpa-uipath
+/plugin marketplace add C:\src\rpa-uipath-ai-dlc\dist\claude
+/plugin install rpa-uipath-ai-dlc@rpa-uipath-ai-dlc
 ```
 
 Exit Claude Code and start it again in the project, so the plugin's SessionStart hook composes it.
@@ -53,7 +53,7 @@ Exit Claude Code and start it again in the project, so the plugin's SessionStart
 Option B - compose it into the project directly (from a terminal in the project folder):
 
 ```bash
-aidlc --project-dir . engine plugin sync --plugin-root C:\src\rpa-uipath\dist\claude
+aidlc --project-dir . engine plugin sync --plugin-root C:\src\rpa-uipath-ai-dlc\dist\claude
 ```
 
 With option B, `aidlc doctor` warns `installed plugin missing`, because the plugin is not in
@@ -96,10 +96,10 @@ Change an existing bot:
 ## Update
 
 ```bash
-cd C:\src\rpa-uipath
+cd C:\src\rpa-uipath-ai-dlc
 git pull
 cd C:\src\MyBot
-bun .claude/tools/aidlc-plugin-build.ts C:\src\rpa-uipath claude
+bun .claude/tools/aidlc-plugin-build.ts C:\src\rpa-uipath-ai-dlc claude
 ```
 
 Then start a new Claude Code session (option A), or run the `plugin sync` command again
@@ -120,7 +120,7 @@ tests/                         sensor script tests (`bun test`)
 Validate after editing (from a configured project folder):
 
 ```bash
-bun .claude/tools/aidlc-plugin-validate.ts C:\src\rpa-uipath
+bun .claude/tools/aidlc-plugin-validate.ts C:\src\rpa-uipath-ai-dlc
 ```
 
 ## Limits

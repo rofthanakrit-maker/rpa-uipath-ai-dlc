@@ -1,6 +1,6 @@
 ---
 target: build-and-test
-plugin: rpa-uipath
+plugin: rpa-uipath-ai-dlc
 adds:
   scopes:
     - rpa-uipath-build
@@ -14,7 +14,7 @@ fragments:
 
 ## fragment: after-step:8
 
-### Step 8b (rpa-uipath): UiPath test cases
+### Step 8b (rpa-uipath-ai-dlc): UiPath test cases
 
 When the work is a UiPath automation, the test instructions cover, for each
 new or changed workflow:

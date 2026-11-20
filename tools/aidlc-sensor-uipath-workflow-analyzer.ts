@@ -1,4 +1,4 @@
-// aidlc-sensor-uipath-workflow-analyzer.ts — ADVISORY Workflow Analyzer gate (rpa-uipath plugin).
+// aidlc-sensor-uipath-workflow-analyzer.ts — ADVISORY Workflow Analyzer gate (rpa-uipath-ai-dlc plugin).
 //
 // Fired at the build-and-test gate once per deliverable. Acts only on
 // build-and-test-summary.md (one run per gate); every other path passes through.

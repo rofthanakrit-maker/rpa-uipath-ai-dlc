@@ -1,6 +1,6 @@
 ---
 name: rpa-uipath-discovery
-plugin: rpa-uipath
+plugin: rpa-uipath-ai-dlc
 depth: Standard
 keywords:
   - process assessment
