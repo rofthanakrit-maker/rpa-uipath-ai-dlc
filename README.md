@@ -22,6 +22,8 @@ An [AI-DLC](https://github.com/awslabs/aidlc-workflows) plugin for UiPath RPA wo
 
 ## Install
 
+> The examples below use Windows paths (`C:\src\...`). On macOS or Linux, substitute your local paths (for example `~/src/MyBot` and `~/src/rpa-uipath-ai-dlc`).
+
 ### 1. Set up AI-DLC in your project
 
 ```bash
@@ -134,3 +136,9 @@ bun .claude/tools/aidlc-plugin-validate.ts C:\src\rpa-uipath-ai-dlc
   Definition and before the PDD.
 - ROI defaults (1,800 productive hours per FTE per year, Go / No-go thresholds) live in
   Steps 5-6 of `stages/ideation/rpa-uipath-ai-dlc-process-assessment.md`.
+
+## License
+
+[MIT](LICENSE)
+
+This is an independent community plugin and is not affiliated with or endorsed by UiPath or AWS.

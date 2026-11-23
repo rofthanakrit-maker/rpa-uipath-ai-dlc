@@ -2,7 +2,7 @@
   "name": "rpa-uipath-ai-dlc",
   "version": "0.2.0",
   "description": "UiPath RPA plugin: a discovery scope with a process assessment (fit score, ROI, go / no-go), a greenfield build scope for new bots, an enhance scope for existing bots, PDD-shaped requirements, SDD-shaped functional design, and a Workflow Analyzer gate check.",
-  "author": { "name": "rpa-uipath-ai-dlc" },
+  "author": { "name": "Thanakrit" },
   "dependencies": ["core"],
   "aidlc": {
     "contributes": {
